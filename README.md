@@ -1,93 +1,101 @@
-**VoltaLink: High-Power AC IoT Timer GenAI Board.**
+# ⚡ VoltaLink: High-Power AC IoT Timer GenAI Board
 
-VoltaLink is a professional, safety-oriented IoT development board which allows voice and manual control of high-power appliances (up to 30A at 220 V/110 V) using high-power AC. It is designed based on ESP32 and connects easily with Google Home, Alexa, and Siri to be used as a smart home automation device and offers powerful local control.
+**VoltaLink** is a professional, safety-oriented IoT development board that enables **voice** and **manual control** of high-power appliances (up to **30A at 220V/110V**) using AC mains.  
+Built on the **ESP32**, VoltaLink connects seamlessly with **Google Home, Alexa, and Siri** for smart home automation, while also offering **local web-based control**.
 
-🚀 Key Features
-⚡ High-Power Control: Switches AC loads as large as 30A with a high-resilience industrial-grade relay safely.
+---
 
-🗣️ Voice Assistant Integration: Complete integration with Google Assistant, Amazon Alexa, and Apple Siri through internet of things cloud services.
+## 🚀 Key Features
 
-🤖 Manual & Local Control: Tactile button and web interface independent of cloud functioning.
+- ⚡ **High-Power Control** – Switches AC loads up to **30A** with an industrial-grade relay safely.  
+- 🗣️ **Voice Assistant Integration** – Works with **Google Assistant, Alexa, Siri** via IoT cloud services.  
+- 🤖 **Manual & Local Control** – Tactile button + local web interface, independent of the cloud.  
+- 🔒 **Built-in Safety**:  
+  - Galvanic Isolation with Hi-Link AC/DC module.  
+  - Fused AC input with protection terminal.  
+  - Flyback diode & TVS protection.  
 
-🔒 Built-in Safety:
+- 🌐 **Web Interface** – Simple timer scheduler & manual override.  
+- 📊 **Expansion Ready** – I²C, UART, and GPIO headers for sensors or displays.  
 
-Galvanic Isolation: Hi-Link AC/DC converter isolates high and low voltage circuits.
+---
 
-Fused AC Input: Has fuse protection screw terminal.
+## 🛠️ Technical Specifications
 
-Flyback Diode and TVS Protection: Guards sensitive circuits against voltage spikes.
+| Parameter              | Specification                     |
+|-------------------------|-----------------------------------|
+| **Microcontroller**     | ESP32-WROOM-32D                  |
+| **WiFi Connectivity**   | 802.11 b/g/n (2.4 GHz)           |
+| **Input Voltage**       | 110V / 220V AC (50/60 Hz)        |
+| **Output Rating**       | 30A Max, 250V AC                 |
+| **Low-Voltage Logic**   | 3.3V & 5V DC                     |
+| **Control Interfaces**  | Voice, Web Server, Physical Btn  |
+| **Safety Features**     | Fuse, Optoisolation, Flyback, Creepage Clearance |
+| **Design Software**     | KiCad 7                          |
 
-🌐 Web Interface: Local web interface with simple scheduler of timer controls and manual override.
+---
 
-📊 Expansion Ready: I2C (e.g., with an OLED display), UART, and other additional GPIOs breakout headers.
+## 📸 Hardware Overview
 
-🛠️ Technical Specifications
-Parameter	Specification:
-Microcontroller:	ESP32-WROOM-32D
-WiFi Connectivity:	802.11 b/g/n (2.4 GHz)
-Input Voltage:	110V / 220V AC (50/60 Hz)
-Output Rating:	30A Max, 250V AC
-Low-Voltage Logic:	3.3V & 5V DC
-Control Interfaces: Voice, Web Server, Physical Button
-Safety Features: Fuse, Optoisolation, Flyback Diode, Creepage/Clearance.
-Design Software:	KiCad 7
+The PCB is carefully designed with **high-voltage (right)** and **low-voltage (left)** separation for safety.  
 
-📸 Hardware Overview
+- **AC Terminal Blocks** – Safe connection of mains wiring.  
+- **Fuse Holder** – Over-current protection.  
+- **Hi-Link HLK-PM05** – Isolated 220V → 5V power supply.  
+- **ESP32-WROOM-32D** – Core WiFi + control logic.  
+- **Industrial Relay (RAYEX-L90)** – 30A switching.  
+- **Optoisolator (PC817)** – Isolation between control & relay.  
+- **Manual Button** – Local timer & override control.  
+- **LED + Buzzer** – User feedback indicators.  
+- **I²C Header** – Expansion for OLED display or sensors.  
 
-The PCB has been done in such a way that there is a distinct separation between a High-Voltage (right) and Low-Voltage (left) segment, which is done to be safe.
+---
 
-AC Input/Output Terminal Blocks: Safe connections of mains wiring.
+## ⚙️ Software & Firmware
 
-Fuse Holder: To protect against over-current.
+The firmware is built on the **Arduino Core for ESP32** and provides:
 
-HLK-PM05 Hi-Link Module: 220 VAC to 5 VDC power supply is isolated.
+- 🌐 **Web Configuration Portal** – Configure timers via browser.  
+- ⏱️ **NTP Sync** – Automatic time synchronization.  
+- 💾 **EEPROM Storage** – Saves timer schedules across reboots.  
+- 🔗 **RESTful API** – Integrates with external smart home systems.  
 
-ESP32-WROOM-32D: WiFi and control logic system-on-chip.
+---
 
-Industrial Relay (RAYEX-L90): 30A switching.
+## 🛡️ Safety Warning  
 
-Optoisolator (PC817): Signal isolates the relay driver.
+⚠️ **HIGH VOLTAGE NOTICE** ⚠️  
 
-Manual Control Button: To set a local timer and override.
+This project works with **LETHAL MAINS VOLTAGE (110V/220V AC)**.  
+**Do NOT attempt** unless you are qualified and aware of the safety precautions.  
 
-Status LED & Buzzer: To provide feedback to the user.
+**Always follow these rules:**  
+- 🔌 Work **de-energized** – Never solder/test while powered.  
+- 📦 Use a **proper insulated enclosure**.  
+- 🛡️ Ensure **proper grounding**.  
+- ⚡ Test with **GFCI outlets** and current-limited supply.  
 
-I2C Header: To be able to connect an OLED display or other sensors.
+---
 
-⚙️ Software & Firmware
-The firmware is based on the Arduino Core of the ESP32 and it offers:
+## 🧩 Future Enhancements
 
-Web Configuration Portal: This enables the timing through any web browser.
+- 🔍 CT sensor integration for **energy monitoring**.  
+- 📡 **BLE provisioning** for easy setup.  
+- 🔄 **OTA firmware updates**.  
+- 🌡️ PCB-mount **temperature sensor** for thermal protection.  
+- 🖇️ **4-layer board** design for improved EMC performance.  
 
-Network Time Protocol (NTP) Sync: Synchronous timekeeping of schedules.
+---
 
-EEPROM Storage: Storing timer settings on power ups.
+## 👥 Contributing
 
-RESTful API: To be able to integrate with other smart homes.
+Pull requests, issues, and feature suggestions are welcome!  
+Donations to support the development are also appreciated.  
 
-🛡️ Safety Warning
-⚠️ HIGH VOLTAGE WARNING ⚠️
+---
 
-In this project, one will work with LETHAL MAINS VOLTAGE(110 V/ 220 V AC). The circuit should not be attempted to be constructed or operated by anyone but a qualified person who has knowledge of the hazards and of the precautions which are required. Always:
+## 📜 License  
 
-Work de-energized. Do not solder or alter the board when it is plugged.
+This project is released for **educational purposes only**.  
+⚠️ Use at your own risk when working with mains power.  
 
-Use a proper enclosure. The board assembled should be in a completely insulated non-conducting enclosure.
-
-Ensure proper grounding.
-
-Test cautiously. Initial testing should be done by using a current-limited power supply and GFCI outlet.
-
-🧩 Future Enhancements
-CT sensors energy monitoring.
-
-Bluetooth Low Energy (BLE) provisioning.
-
-Over-the-Air (OTA) updates.
-
-Thermal protecting PCB-mount temperature sensor.
-
-4 Layer board schematics and layout to improve its EMC performance.
-
-👥 Contributing
-Donations, bugs and proposals are also welcome!.
