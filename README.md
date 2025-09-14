@@ -64,7 +64,7 @@ The firmware is built on the **Arduino Core for ESP32** and provides:
 
 ##  Safety Warning  
 
-⚠️ **HIGH VOLTAGE NOTICE** ⚠️  
+ **HIGH VOLTAGE NOTICE** 
 
 This project works with **LETHAL MAINS VOLTAGE (110V/220V AC)**.  
 **Do NOT attempt** unless you are qualified and aware of the safety precautions.  
@@ -97,5 +97,5 @@ Donations to support the development are also appreciated.
 ##  License  
 
 This project is released for **educational purposes only**.  
-⚠️ Use at your own risk when working with mains power.  
+ Use at your own risk when working with mains power.  
 
