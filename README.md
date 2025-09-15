@@ -31,7 +31,7 @@ Built on the **ESP32**, VoltaLink connects seamlessly with **Google Home, Alexa,
 | **Low-Voltage Logic**   | 3.3V & 5V DC                     |
 | **Control Interfaces**  | Voice, Web Server, Physical Btn  |
 | **Safety Features**     | Fuse, Optoisolation, Flyback, Creepage Clearance |
-| **Design Software**     | KiCad 7                          |
+
 
 ---
 
